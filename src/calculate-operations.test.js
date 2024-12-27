@@ -17,4 +17,9 @@ describe("Calculation TestCases", () => {
     let sum = CalculationOperations.add("//;\n1;2");
     expect(sum).toBe(3);
   });
+  test("should throw and error negative numbers found", () => {
+    expect(() => {
+      CalculationOperations.add("//;\n2;-1,-2,-3");
+    }).toThrow("-1,-2,-3 negative numbers not excepted");
+  });
 });
